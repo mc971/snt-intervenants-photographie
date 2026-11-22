@@ -5,7 +5,7 @@ Dossier prêt à déposer sur GitHub (décision de l'enseignant du 21/11/2026, q
 ```
 docs/
   index.html            page d'accueil pour les intervenants (deux boutons)
-  escape-game/          l'escape game v8.1 (page de la variante « élève » + la vidéo)
+  escape-game/          l'escape game v9.1 (page de la variante « élève » + la vidéo)
   simulateur/           le simulateur de prise de vue « Du réglage à l'EXIF » v2.3-rc4
   robots.txt            demande aux moteurs de recherche de ne pas indexer
   .nojekyll             publier les fichiers tels quels, sans traitement Jekyll
@@ -19,7 +19,7 @@ Les pages sont autonomes (aucune ressource externe chargée, chemins relatifs), 
 - avec un compte **gratuit**, GitHub Pages ne publie que des dépôts **publics** ;
 - le site publié est lisible par **toute personne qui a l'adresse** : GitHub ne permet de réserver un site à des invités que dans certaines offres payantes (Enterprise Cloud).
 
-Conséquence : le choix « accès limité » du 21/11 n'est **pas tenable** avec un compte gratuit. Ce que l'on peut faire : une adresse non listée (aucun lien public, `robots.txt` et page d'accueil en `noindex`), mais qui n'est pas secrète. Si l'accès doit rester limité, deux repères : envoyer directement `EscapeGame_photon-pixel_v8_1_enseignant.zip` et le simulateur par l'ENT ou courriel, ou publier seulement l'un des deux outils.
+Conséquence : le choix « accès limité » du 21/11 n'est **pas tenable** avec un compte gratuit. Ce que l'on peut faire : une adresse non listée (aucun lien public, `robots.txt` et page d'accueil en `noindex`), mais qui n'est pas secrète. Si l'accès doit rester limité, deux repères : envoyer directement `EscapeGame_photon-pixel_v9_1_enseignant.zip` et le simulateur par l'ENT ou courriel, ou publier seulement l'un des deux outils.
 
 Ce que la publication rend lisible par tous :
 - les photos de la mission 6, avec leurs métadonnées d'origine, **position GPS comprise** (l'activité consiste à les lire) ;
