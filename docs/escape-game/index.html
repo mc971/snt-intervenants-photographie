@@ -1055,6 +1055,9 @@ dd.mys-todo{background:#fff1c2;border:2px solid #d9a400;border-radius:6px;paddin
 .cx-cot{position:absolute;top:0;opacity:0;will-change:transform}
 .cx-ov.p4 .cx-cot{animation:cxcot var(--d,3.4s) cubic-bezier(.3,.1,.5,1) var(--delay,.2s) forwards}
 @keyframes cxcot{0%{opacity:0;transform:translate3d(0,-8vh,0) rotate(0)}8%{opacity:1}50%{transform:translate3d(var(--dx1),52vh,0) rotate(calc(var(--rot) * .5))}92%{opacity:1}100%{opacity:0;transform:translate3d(var(--dx2),108vh,0) rotate(var(--rot))}}
+.v4-panel.qr-att{outline:3px solid #ffd84d;outline-offset:6px;animation:qratt 1.2s ease-in-out 4}
+@keyframes qratt{0%,100%{outline-color:#ffd84d;box-shadow:0 0 0 0 #ffd84d00}50%{outline-color:#fff;box-shadow:0 0 24px 4px #ffd84dcc}}
+@media (prefers-reduced-motion:reduce){.v4-panel.qr-att{animation:none}}
 .cx-skip{position:absolute;top:max(14px,env(safe-area-inset-top,0px));right:14px;z-index:3;background:#0008;border:1px solid #ffffff44;color:#e2e8f0;border-radius:8px;padding:8px 14px;font:600 13px var(--f-mono);cursor:pointer}
 .cx-ov.p4 .cx-skip{display:none}
 .cx-ov.skip .cx-lid,.cx-ov.skip .cx-gl,.cx-ov.skip .cx-title,.cx-ov.skip .cx-reward,.cx-ov.skip .cx-acts,.cx-ov.skip .cx-beam{animation-duration:.3s!important;animation-delay:0s!important;transition-duration:.3s!important;transition-delay:0s!important}
@@ -4297,7 +4300,15 @@ function showPoster(){
   ov.hidden = false; document.body.style.overflow = "hidden";
   $("posterClose").focus();
 }
-function hidePoster(){ $("posterOv").hidden = true; document.body.style.overflow = ""; $("posterInline").scrollIntoView({ block: "start" }); }
+/* v9.1 : après l'affiche ou la cinématique, on ramène l'élève sur « Remettre mon résultat » (QR code, fichier JSON) pour qu'il ne la manque pas */
+function versQr(){
+  const c = $("coffreActions"); if (!c || c.hidden) return;
+  c.scrollIntoView({ block: "center", behavior: (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) ? "auto" : "smooth" });
+  c.classList.add("qr-att"); setTimeout(() => c.classList.remove("qr-att"), 5200);
+  setTimeout(() => { const q = $("resultQr").getBoundingClientRect(); if (q.height > 0 && (q.top < 0 || q.bottom > innerHeight)) c.scrollIntoView({ block: "center", behavior: "auto" }); }, 1100);   /* le défilement doux peut être interrompu : on corrige */
+  const b = $("saveJsonBtn"); if (b) setTimeout(() => { try { b.focus({ preventScroll: true }); } catch (e) {} }, 500);
+}
+function hidePoster(){ $("posterOv").hidden = true; document.body.style.overflow = ""; versQr(); }
 $("posterClose").onclick = hidePoster;
 $("posterOv").addEventListener("click", e => { if (e.target === $("posterOv")) hidePoster(); });
 document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("posterOv").hidden) hidePoster(); });
@@ -4416,7 +4427,7 @@ function cxClose(cb){
   if (!cxOn) return; cxT.forEach(clearTimeout); cxT = [];
   const ov = $("coffreOv"); ov.classList.remove("on");
   setTimeout(() => { ov.hidden = true; ov.className = "cx-ov"; cxOn = false; cxPh = 0; document.body.style.overflow = ""; { const cf = $("cxConfetti"); if (cf) cf.innerHTML = ""; }
-    if (cb) cb(); else { const t = $("bilanTitle"); if (t) t.focus(); } }, 700);
+    if (cb) cb(); else versQr(); }, 700);
 }
 /* appelée uniquement par la branche « mot de passe correct » de pwdOk : le couvercle ne s'ouvre jamais avant */
 function playOpening(name){
