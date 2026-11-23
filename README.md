@@ -5,7 +5,7 @@ Dossier prêt à déposer sur GitHub (décision de l'enseignant du 21/11/2026, q
 ```
 docs/
   index.html            page d'accueil pour les intervenants (deux boutons)
-  escape-game/          l'escape game v9.1 (page de la variante « élève » + la vidéo)
+  escape-game/          l'escape game v9.2 (page de la variante « élève » + la vidéo)
   simulateur/           le simulateur de prise de vue « Du réglage à l'EXIF » v2.3-rc4
   robots.txt            demande aux moteurs de recherche de ne pas indexer
   .nojekyll             publier les fichiers tels quels, sans traitement Jekyll
