@@ -1114,7 +1114,7 @@ dd.mys-todo{background:#fff1c2;border:2px solid #d9a400;border-radius:6px;paddin
       <button class="ibtn" type="button" id="saveBtn" title="Sauvegarder ma progression (fichier JSON)" aria-label="Sauvegarder ma progression">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3M8 21v-7h8v7"/></svg>
       </button>
-      <button class="coffre-banner" id="coffreBanner" type="button" disabled aria-label="Coffre verrouillé, 0 lettre sur 8" title="Coffre : s'ouvre avec au moins 7 lettres (0/8)">
+      <button class="coffre-banner" id="coffreBanner" type="button" disabled aria-label="Coffre verrouillé, 0 lettre sur 8" title="Coffre : s'ouvre avec au moins 6 lettres (0/8)">
         <svg class="cx-ic" viewBox="0 0 100 86" aria-hidden="true" focusable="false">
           <defs>
             <linearGradient id="cxM" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a5872"/><stop offset=".5" stop-color="#252f44"/><stop offset="1" stop-color="#121826"/></linearGradient>
@@ -1587,7 +1587,7 @@ dd.mys-todo{background:#fff1c2;border:2px solid #d9a400;border-radius:6px;paddin
     <h3>Défi 1 : Importer et examiner une photographie</h3>
     <p>Objectif : lire les informations cachées dans le fichier d'une photo. L’importation est simulée : une photo est tirée au hasard parmi quatre, aucun fichier de votre ordinateur n’est demandé. Résoudre un seul scénario suffit ; vous pouvez ensuite explorer les autres.</p>
     <div class="stegq"><p>❓ Que révèlent les métadonnées d'une photo : quelle marque, quelle date, quel lieu ?</p></div>
-    <p class="mys-notice"><b>Internet est nécessaire pour la mission 6</b> : la carte <b>OpenStreetMap</b> (bouton « Ouvrir OpenStreetMap » de cette page) permet de retrouver la commune et le département à partir du GPS. Si Internet ou la carte ne fonctionne pas, prévenez le professeur et poursuivez les autres missions : sept missions réussies sur huit suffisent pour accéder au coffre.</p>
+    <p class="mys-notice"><b>Internet est nécessaire pour la mission 6</b> : la carte <b>OpenStreetMap</b> (bouton « Ouvrir OpenStreetMap » de cette page) permet de retrouver la commune et le département à partir du GPS. Si Internet ou la carte ne fonctionne pas, prévenez le professeur et poursuivez les autres missions : six missions réussies sur huit suffisent pour accéder au coffre.</p>
     <p id="mysProgress" class="small" role="status"></p>
     <div class="row" style="margin:12px 0"><button type="button" class="btn acc" id="mysImport">Importer une photo (simulation)</button></div>
     <div class="two stegtwo">
@@ -1870,8 +1870,8 @@ dd.mys-todo{background:#fff1c2;border:2px solid #d9a400;border-radius:6px;paddin
 <section class="final" id="final"><div class="wrap">
   <div class="eyebrow" style="color:#9aa8b6">Le coffre</div>
   <h2>Entrez le mot de passe</h2>
-  <p style="margin-top:8px;color:#c3ccd5" class="measure">Assemblez les 8 lettres dans l’ordre des vues. Il faut réussir au moins 7 missions sur 8 pour ouvrir le coffre. Si une mission dysfonctionne, poursuivez les sept autres ; demandez au professeur la lettre manquante si nécessaire. Seuls les XP réellement gagnés sont conservés.</p>
-  <p id="finalNote" class="measure" style="margin-top:10px;color:#ffd84d;font-weight:700"><span id="finalNoteXp">S’il vous reste du temps, vous pouvez encore augmenter vos XP en réussissant la dernière mission. </span>Attention : dès que vous aurez ouvert le coffre avec le mot de passe, vous ne pourrez plus tenter de mission pour gagner des XP.</p>
+  <p style="margin-top:8px;color:#c3ccd5" class="measure">Assemblez les 8 lettres dans l’ordre des vues. Il faut réussir au moins 6 missions sur 8 pour ouvrir le coffre : il vous manquera alors des lettres, à retrouver d’après le mot formé par les autres ou à demander au professeur. Si une mission dysfonctionne, poursuivez les autres ; demandez au professeur les lettres manquantes si nécessaire. Seuls les XP réellement gagnés sont conservés.</p>
+  <p id="finalNote" class="measure" style="margin-top:10px;color:#ffd84d;font-weight:700"><span id="finalNoteXp">S’il vous reste du temps, vous pouvez encore augmenter vos XP en réussissant les missions qu’il vous reste. </span>Attention : dès que vous aurez ouvert le coffre avec le mot de passe, vous ne pourrez plus tenter de mission pour gagner des XP.</p>
   <label for="who" style="display:block;margin-top:16px;color:#c3ccd5">Prénom(s) <b style="color:#ffd84d">obligatoire</b> :</label>
   <input type="text" id="who" maxlength="40" required aria-required="true" placeholder="ex : Léa et Nassim" style="font-size:17px;letter-spacing:0;text-transform:none;width:min(100%,28ch);margin-top:4px;background:#0b0e12;color:#fff;border-color:#ffffff40">
   <label for="pwd" style="display:block;margin-top:12px;color:#c3ccd5">Mot de passe :</label>
@@ -1963,7 +1963,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="cx-shock"></div><div class="cx-shock s2"></div><div class="cx-flash"></div><div class="cx-confetti" id="cxConfetti" aria-hidden="true"></div>
     <div class="cx-acts"><button type="button" class="btn acc" id="cxPosterBtn">Voir l’affiche en grand</button><button type="button" class="btn" id="cxClose">Continuer</button></div>
   </div>
-  <div class="cx-msg" id="cxMsg" aria-hidden="true">COFFRE LÉGENDAIRE DÉBLOQUÉ !<small>Cliquez sur le coffre quand vous voulez l’ouvrir</small><small class="cx-note" id="cxNoteXp">S’il vous reste du temps, vous pouvez augmenter vos XP en réussissant la dernière mission.</small><small class="cx-note">Attention : une fois le coffre ouvert avec le mot de passe, vous ne pourrez plus tenter de mission pour gagner des XP.</small></div>
+  <div class="cx-msg" id="cxMsg" aria-hidden="true">COFFRE LÉGENDAIRE DÉBLOQUÉ !<small>Cliquez sur le coffre quand vous voulez l’ouvrir</small><small class="cx-note" id="cxNoteXp">S’il vous reste du temps, vous pouvez augmenter vos XP en réussissant les missions qu’il vous reste (<span id="cxRest">2 missions</span>).</small><small class="cx-note">Attention : une fois le coffre ouvert avec le mot de passe, vous ne pourrez plus tenter de mission pour gagner des XP.</small></div>
   <p class="sr-only" id="cxLive" role="status" aria-live="polite"></p>
 
 
@@ -2288,6 +2288,42 @@ function sonClic(c, t){ const len = Math.floor(c.sampleRate * 0.03), b = c.creat
   for (let i = 0; i < len; i++) x[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 3);
   const src = c.createBufferSource(), f = c.createBiquadFilter(), v = c.createGain(); f.type = "highpass"; f.frequency.value = 1800; v.gain.value = 0.15;
   src.buffer = b; src.connect(f); f.connect(v); v.connect(c.destination); src.start(t); }
+/* v9.1 : effets sonores du coffre, synthétisés (aucun fichier). Tout passe par un bus avec compresseur (pas de saturation) que l'on peut couper net. */
+const SONX = { bus: null };
+function sonBus(c){ if (!SONX.bus || SONX.ctx !== c){ const g = c.createGain(), k = c.createDynamicsCompressor(); g.gain.value = 1; k.threshold.value = -18; k.knee.value = 12; k.ratio.value = 8; k.attack.value = 0.003; k.release.value = 0.25; g.connect(k); k.connect(c.destination); SONX.bus = g; SONX.ctx = c; } return SONX.bus; }
+function sonStop(){ const b = SONX.bus, c = SONX.ctx; if (!b || !c) return; SONX.bus = null; try { const t = c.currentTime; b.gain.cancelScheduledValues(t); b.gain.setValueAtTime(b.gain.value, t); b.gain.linearRampToValueAtTime(0, t + 0.15); } catch (e) {} }
+function xTon(c, o){ const osc = c.createOscillator(), v = c.createGain(); osc.type = o.type || "sine"; osc.frequency.setValueAtTime(o.f0, o.t); if (o.f1 && o.f1 !== o.f0) osc.frequency.exponentialRampToValueAtTime(o.f1, o.t + o.d);
+  v.gain.setValueAtTime(0.0001, o.t); v.gain.exponentialRampToValueAtTime(o.g, o.t + (o.a || 0.02)); v.gain.exponentialRampToValueAtTime(0.0001, o.t + o.d);
+  let n = osc; if (o.lp){ const f = c.createBiquadFilter(); f.type = "lowpass"; f.frequency.value = o.lp; osc.connect(f); n = f; }
+  n.connect(v); v.connect(sonBus(c)); osc.start(o.t); osc.stop(o.t + o.d + 0.05); }
+function xBruit(c, o){ const len = Math.floor(c.sampleRate * o.d), b = c.createBuffer(1, len, c.sampleRate), x = b.getChannelData(0); for (let i = 0; i < len; i++) x[i] = Math.random() * 2 - 1;
+  const src = c.createBufferSource(), f = c.createBiquadFilter(), v = c.createGain(); src.buffer = b; f.type = o.type || "bandpass"; f.Q.value = o.q || 1; f.frequency.setValueAtTime(o.f0, o.t); if (o.f1) f.frequency.exponentialRampToValueAtTime(o.f1, o.t + o.d);
+  v.gain.setValueAtTime(0.0001, o.t); v.gain.exponentialRampToValueAtTime(o.g, o.t + (o.a || 0.05)); v.gain.exponentialRampToValueAtTime(0.0001, o.t + o.d);
+  src.connect(f); f.connect(v); v.connect(sonBus(c)); src.start(o.t); }
+function xClac(c, t, g){ xTon(c, { f0: 150, f1: 55, t, d: 0.2, g: 0.55 * g, a: 0.004 }); xBruit(c, { type: "bandpass", f0: 2600, f1: 1100, q: 2, t, d: 0.09, g: 0.35 * g, a: 0.004 }); }
+function sonX(c, kind, t){
+  if (kind === "acces"){   /* 6e lettre : montée de charge, clac du verrou, tintements */
+    xTon(c, { type: "sawtooth", f0: 180, f1: 920, t, d: 1.5, g: 0.17, a: 1.2, lp: 1800 }); xBruit(c, { type: "highpass", f0: 3000, f1: 7000, t, d: 1.5, g: 0.05, a: 1.2 });
+    xClac(c, t + 1.55, 1); [880, 1175, 1568, 2093].forEach((f, i) => xTon(c, { type: "triangle", f0: f, t: t + 1.75 + i * 0.12, d: 0.6, g: 0.17, a: 0.01 }));
+    xBruit(c, { type: "highpass", f0: 5000, t: t + 1.8, d: 0.9, g: 0.05, a: 0.02 });
+  } else if (kind === "ouv_debut"){   /* mise en scène : bourdonnement grave qui monte */
+    xTon(c, { f0: 55, f1: 95, t, d: 1.8, g: 0.3, a: 1.1 }); xBruit(c, { type: "lowpass", f0: 150, t, d: 1.8, g: 0.12, a: 1.1 });
+  } else if (kind === "ouv_activation"){   /* activation : grondement, rouages, lourd clunk du verrou */
+    xTon(c, { type: "sawtooth", f0: 70, f1: 150, t, d: 2.1, g: 0.2, a: 1.5, lp: 240 }); xBruit(c, { type: "lowpass", f0: 300, f1: 700, t, d: 2.1, g: 0.2, a: 1.5 });
+    [0.3, 0.75, 1.2, 1.65].forEach(dt => { xTon(c, { type: "square", f0: 1800, f1: 900, t: t + dt, d: 0.06, g: 0.13, a: 0.004 }); sonClic(c, t + dt); });
+    xClac(c, t + 1.95, 1.2);
+  } else if (kind === "ouv_couvercle"){   /* grincement du couvercle */
+    xBruit(c, { type: "bandpass", f0: 340, f1: 900, q: 9, t, d: 1.4, g: 2.6, a: 0.35 }); xBruit(c, { type: "bandpass", f0: 250, f1: 520, q: 7, t: t + 0.1, d: 1.3, g: 2.0, a: 0.4 });
+  } else if (kind === "ouv_flash"){   /* flash : déclic d'obturateur, souffle et grosse caisse */
+    sonClic(c, t); sonClic(c, t + 0.09); xTon(c, { f0: 95, f1: 32, t, d: 0.95, g: 0.65, a: 0.004 });
+    xBruit(c, { type: "lowpass", f0: 4500, f1: 300, t, d: 0.8, g: 0.4, a: 0.003 }); xBruit(c, { type: "highpass", f0: 6000, t, d: 0.45, g: 0.1, a: 0.003 });
+  } else if (kind === "ouv_fanfare"){   /* récompense : accord, arpège, basse et tintements de cotillons */
+    [523, 659, 784, 1047].forEach(f => xTon(c, { type: "sawtooth", f0: f, t, d: 1.9, g: 0.1, a: 0.03, lp: 2400 }));
+    [523, 659, 784, 1047, 1319].forEach((f, i) => xTon(c, { type: "triangle", f0: f, t: t + i * 0.08, d: 0.4, g: 0.19, a: 0.01 }));
+    xTon(c, { f0: 131, f1: 131, t, d: 1.4, g: 0.32, a: 0.02 });
+    for (let i = 0; i < 14; i++) xTon(c, { f0: 2200 + Math.random() * 3000, t: t + 0.3 + Math.random() * 2.2, d: 0.25, g: 0.06, a: 0.005 });
+  }
+}
 function snd(kind){ if (!SON.on || !kind) return; const c = sonCtx(); if (!c) return; const t = c.currentTime + 0.01, G = 0.15;
   try {
     if (kind === "shutter"){ sonClic(c, t); sonClic(c, t + 0.09); }
@@ -2299,6 +2335,7 @@ function snd(kind){ if (!SON.on || !kind) return; const c = sonCtx(); if (!c) re
     else if (kind === "ok") sonNote(c, 660, 880, t, 0.25, G);
     else if (kind === "ko") sonNote(c, 220, 165, t, 0.3, G * 0.5);
     else if (kind === "letter"){ sonClic(c, t); [523, 659, 784].forEach((f, i) => sonNote(c, f, f, t + 0.15 + i * 0.16, 0.22, G)); }
+    else if (["acces", "ouv_debut", "ouv_activation", "ouv_couvercle", "ouv_flash", "ouv_fanfare"].includes(kind)) sonX(c, kind, t);
     else if (kind === "vault"){ [392, 523, 659].forEach((f, i) => sonNote(c, f, f, t + i * 0.22, 0.3, G)); sonClic(c, t + 0.95); sonClic(c, t + 1.04); }
   } catch (e) {}
 }
@@ -3868,7 +3905,7 @@ const RTQ = [
 
 /* ================= ACCÈS ================= */
 /* aucun verrou dans cette version ; v4.7 : refreshLocks() applique l'état du mode enseignant à l'instant du clic (détail de la note), elle était vide en v4.6 */
-function coffreVerrou(){ return !(completedState || teacherMode() || (S.letters && S.letters.length >= 7)); }
+function coffreVerrou(){ return !(completedState || teacherMode() || (S.letters && S.letters.length >= 6)); }
 function majVerrouCoffre(){ const v = coffreVerrou();
   document.querySelectorAll('.pager a[href="#final"]').forEach(a => { a.classList.toggle("locked", v); a.setAttribute("aria-disabled", String(v)); }); }
 /* v8 : coffre dans la bannière : état synchronisé avec coffreSync() */
@@ -4338,8 +4375,8 @@ function missionsReussies(){
 $("pwdOk").onclick = async () => {
   if (S.t1) { showBilan(); return; } // v4.0 : aucun nouvel effet de fin
   const count = missionsReussies().length;
-  if (count < 7){
-    fb("pwdFb", false, count + " / 8 missions réussies. Réussissez au moins 7 missions avant d’ouvrir le coffre ; une mission peut être laissée de côté en cas de dysfonctionnement.");
+  if (count < 6){
+    fb("pwdFb", false, count + " / 8 missions réussies. Réussissez au moins 6 missions avant d’ouvrir le coffre ; une mission peut être laissée de côté en cas de dysfonctionnement.");
     return;
   }
   const who = cleanInput($("who").value, 40).trim();
@@ -4361,7 +4398,7 @@ $("pwdOk").onclick = async () => {
     $("noteDetail").hidden = !teacherMode();
     $("dipl").classList.add("on"); fb("pwdFb", true, "Coffre ouvert !");
     showBilan(); // résultat figé seulement après six missions au minimum
-    if (count === 7) fb("pwdFb", true, "Coffre ouvert avec 7 missions réussies sur 8 : tolérance pour une mission en dysfonctionnement. Les XP correspondent aux activités réalisées.");
+    if (count < 8) fb("pwdFb", true, "Coffre ouvert avec " + count + " missions réussies sur 8 : tolérance pour les missions non faites ou en dysfonctionnement. Les XP correspondent aux activités réalisées.");
     $("posterViewBtn").hidden = false;
     setTimeout(() => toast2("Pour votre professeur : montrez le QR code ou sauvegardez le fichier JSON (boutons sous le bilan)."), 400);
     playOpening(name);   // v9 : cinématique d'ouverture ; état, XP et résultat sont déjà figés ci-dessus
@@ -4381,11 +4418,12 @@ function runUnlockSequence(){
     setTimeout(() => lts.forEach(a => { a.classList.remove("cx-lt"); a.style.removeProperty("--d"); }), 2600);
     if (!rm && wave){ wave.classList.remove("go"); void wave.offsetWidth; wave.classList.add("go"); }
     cb.classList.add("charging"); setTimeout(() => cb.classList.remove("charging"), rm ? 100 : 3600);
-    try { snd("letter"); } catch (e) {}
+    try { snd("acces"); } catch (e) {}
     setTimeout(() => {
       msg.classList.remove("on"); void msg.offsetWidth; msg.classList.add("on");
       const lv = $("cxLive"), nx = $("cxNoteXp"), rest = !(S.letters && S.letters.length >= 8); if (nx) nx.hidden = !rest;
-      if (lv) lv.textContent = "Coffre légendaire débloqué ! Cliquez sur le coffre quand vous voulez l’ouvrir. " + (rest ? "S’il vous reste du temps, vous pouvez augmenter vos XP en réussissant la dernière mission. " : "") + "Attention : une fois le coffre ouvert avec le mot de passe, vous ne pourrez plus tenter de mission pour gagner des XP.";
+      const manque = 8 - (S.letters ? S.letters.length : 0), cr = $("cxRest"); if (cr) cr.textContent = manque === 1 ? "1 mission" : manque + " missions";
+      if (lv) lv.textContent = "Coffre légendaire débloqué ! Cliquez sur le coffre quand vous voulez l’ouvrir. " + (rest ? "S’il vous reste du temps, vous pouvez augmenter vos XP en réussissant les missions qu’il vous reste. " : "") + "Attention : une fois le coffre ouvert avec le mot de passe, vous ne pourrez plus tenter de mission pour gagner des XP.";
       setTimeout(() => msg.classList.remove("on"), 12700);
     }, rm ? 0 : 2600);
   }, 80);
@@ -4418,13 +4456,13 @@ function cxConfetti(){
 }
 function cxPhase(n){
   cxPh = n; const ov = $("coffreOv"); for (let i = 1; i <= n; i++) ov.classList.add("p" + i);
-  if (n === 4) cxConfetti();
+  if (n === 4){ cxConfetti(); try { sonStop(); snd("ouv_fanfare"); } catch (e) {} }
   if (n === 4){ const lv = $("cxLive"); if (lv) lv.textContent = "Coffre ouvert. Bravo ! Mission accomplie !";
     setTimeout(() => { const b = $("cxClose"); if (b && cxOn) b.focus(); }, 1800); }
 }
 function cxSkip(){ if (!cxOn || cxPh >= 4) return; cxT.forEach(clearTimeout); cxT = []; $("coffreOv").classList.add("skip"); cxPhase(4); }
 function cxClose(cb){
-  if (!cxOn) return; cxT.forEach(clearTimeout); cxT = [];
+  if (!cxOn) return; cxT.forEach(clearTimeout); cxT = []; try { sonStop(); } catch (e) {}
   const ov = $("coffreOv"); ov.classList.remove("on");
   setTimeout(() => { ov.hidden = true; ov.className = "cx-ov"; cxOn = false; cxPh = 0; document.body.style.overflow = ""; { const cf = $("cxConfetti"); if (cf) cf.innerHTML = ""; }
     if (cb) cb(); else versQr(); }, 700);
@@ -4439,7 +4477,7 @@ function playOpening(name){
   if (cxRM()){ cxPhase(4); return; }
   $("cxSkip").focus(); cxPhase(1);
   [[2, 1800], [3, 3900], [4, 5900]].forEach(([n, t]) => cxT.push(setTimeout(() => cxPhase(n), t)));
-  cxT.push(setTimeout(() => { try { snd("shutter"); } catch (e) {} }, 4400));   /* déclic d'obturateur avec le flash blanc de l'ouverture */
+  [["ouv_debut", 0], ["ouv_activation", 1800], ["ouv_couvercle", 4300], ["ouv_flash", 4400]].forEach(([k, t]) => cxT.push(setTimeout(() => { try { snd(k); } catch (e) {} }, t)));   /* sons de la cinématique, calés sur les phases et sur le flash */
 }
 document.addEventListener("keydown", e => { if (e.key === "Escape" && cxOn){ cxPh < 4 ? cxSkip() : cxClose(); } });
 function bindTeacher(){ const b = $("unlockAll"); if (!b) return;
@@ -4464,7 +4502,7 @@ function bindTeacher(){ const b = $("unlockAll"); if (!b) return;
   function coffreSync(){
     majVerrouCoffre();
     $("frameNext").disabled = curK >= ids.length - 1 || (ids[curK + 1] === "final" && coffreVerrou());
-    /* v8 : coffre dans la bannière, toujours visible, s'ouvre à 7 lettres */
+    /* v8 : coffre dans la bannière, toujours visible ; v9.1 : s'ouvre à 6 lettres sur 8 */
     const cb = $("coffreBanner"); if (!cb) return;
     const n = (S.letters ? S.letters.length : 0);
     const verrou = coffreVerrou();
@@ -4474,25 +4512,25 @@ function bindTeacher(){ const b = $("unlockAll"); if (!b) return;
     if (nowOn && !wasOn){
       cb.classList.add("on");
       /* v9 : séquence de déverrouillage seulement quand la 7e lettre vient d'être gagnée (pas au rechargement, pas en mode professeur) */
-      if (cxBase && S.letters && S.letters.length >= 7 && !completedState) runUnlockSequence();
+      if (cxBase && S.letters && S.letters.length >= 6 && !completedState) runUnlockSequence();
     } else { cb.classList.toggle("on", nowOn); }
     cxBase = true;
     { const fx = $("finalNoteXp"); if (fx) fx.hidden = n >= 8; }   /* rappel de l'écran du mot de passe : rien à gagner si les 8 lettres sont là */
     cb.disabled = verrou && !teacherMode();
     cb.setAttribute("aria-label", verrou ? "Coffre verrouillé, " + n + " lettre" + (n>1?"s":"") + " sur 8" : "Coffre ouvert, " + n + " lettres sur 8, accéder au coffre");
-    cb.title = verrou ? "Coffre : s'ouvre avec au moins 7 lettres (" + n + "/8)" : "Ouvrir le coffre";
+    cb.title = verrou ? "Coffre : s'ouvre avec au moins 6 lettres (" + n + "/8)" : "Ouvrir le coffre";
   }
   window.coffreSync = coffreSync;
   /* v8 : clic sur le coffre de la bannière */
   const cbBtn = $("coffreBanner");
   if (cbBtn) cbBtn.addEventListener("click", () => {
-    if (cbBtn.disabled){ toast2("Le coffre s'ouvre quand vous avez au moins 7 lettres sur 8."); return; }
+    if (cbBtn.disabled){ toast2("Le coffre s'ouvre quand vous avez au moins 6 lettres sur 8."); return; }
     show("final", true);
     try { history.replaceState(null, "", "#final"); } catch (e) {}
   });
   function show(id, scroll){
     if (!ids.includes(id)) id = "accueil";
-    if (id === "final" && coffreVerrou()){ const vu = panels.some(p => !p.hidden); toast2("Le coffre s'ouvre quand vous avez au moins 7 lettres sur 8."); id = vu ? ids[curK] : "ia"; }
+    if (id === "final" && coffreVerrou()){ const vu = panels.some(p => !p.hidden); toast2("Le coffre s'ouvre quand vous avez au moins 6 lettres sur 8."); id = vu ? ids[curK] : "ia"; }
     curK = ids.indexOf(id); $("framePrev").disabled = curK <= 0; coffreSync();
     panels.forEach(p => { p.hidden = p.id !== id; });
     links.forEach(a => { const on = a.getAttribute("href") === "#" + id; a.classList.toggle("cur", on); a.setAttribute("aria-selected", on);
